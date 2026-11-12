@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="New Age Factories LLC is a digital product studio building mobile apps, websites, e-commerce and connected systems. Creators of Ojra, a ride-hailing platform for riders and drivers — live on Google Play.">
+  <meta name="theme-color" content="#05070E">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="New Age Factories">
+  <meta property="og:title" content="New Age Factories — Digital Product Studio">
+  <meta property="og:description" content="We build digital products that move business forward. Mobile apps, websites, e-commerce, digital solutions and networking.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:image:alt" content="New Age Factories — digital products built to move business forward">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="New Age Factories — Digital Product Studio">
+  <meta name="twitter:description" content="Mobile apps, websites, e-commerce, digital solutions and networking — and Ojra, our ride-hailing platform.">
+  <meta name="twitter:image" content="og-image.jpg">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="New Age Factories">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>New Age Factories — Digital Product Studio</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('assets/assets/fonts/Inter.ttf') format('truetype');
+      font-weight: 300 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('assets/assets/fonts/JetBrainsMono.ttf') format('truetype');
+      font-weight: 400 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('assets/assets/fonts/SpaceGrotesk.ttf') format('truetype');
+      font-weight: 300 700;
+      font-display: swap;
+    }
+    :root {
+      --bg: #05070e;
+      --ink: #f4f7ff;
+      --muted: #8d99b0;
+      --cyan: #46e7ff;
+      --violet: #8b6cff;
+      --lime: #beff69;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body { overflow-x: hidden; }
+    ::selection { background: rgba(70, 231, 255, 0.28); color: #fff; }
+    #boot {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(70, 231, 255, 0.09), transparent 38%),
+        radial-gradient(circle at 18% 82%, rgba(139, 108, 255, 0.11), transparent 42%),
+        #05070e;
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+    }
+    #boot::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at center, #000 0%, transparent 72%);
+      pointer-events: none;
+    }
+    #boot.loaded { opacity: 0; visibility: hidden; }
+    .boot-mark {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .boot-tile {
+      width: 62px;
+      height: 62px;
+      border-radius: 17px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: linear-gradient(145deg, #0a1222, #080b14);
+      box-shadow: 0 0 50px rgba(70,231,255,0.12), inset 0 0 30px rgba(139,108,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .boot-name {
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-size: 12px;
+      letter-spacing: 4.5px;
+      font-weight: 600;
+      color: #dfe7f5;
+      padding-left: 4px;
+    }
+    .boot-sub {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: #66748c;
+      text-transform: uppercase;
+    }
+    .boot-line {
+      width: 168px;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .boot-line span {
+      position: absolute;
+      inset: 0;
+      width: 44%;
+      background: linear-gradient(90deg, transparent, #46e7ff, #8b6cff, transparent);
+      animation: boot-slide 1.4s ease-in-out infinite;
+    }
+    @keyframes boot-slide {
+      0% { transform: translateX(-110%); }
+      100% { transform: translateX(340%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .boot-line span { animation: none; width: 100%; opacity: .5; }
+    }
+  </style>
+</head>
+<body>
+  <div id="boot" aria-hidden="true">
+    <div class="boot-mark">
+      <div class="boot-tile">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="ng" x1="8" y1="27" x2="28" y2="7" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#46E7FF"/>
+              <stop offset="0.55" stop-color="#8B6CFF"/>
+              <stop offset="1" stop-color="#FF5FA2"/>
+            </linearGradient>
+          </defs>
+          <path d="M9 26V8L25 26V8" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="26.4" cy="7.4" r="2.5" fill="#BEFF69"/>
+        </svg>
+      </div>
+      <div class="boot-name">NEW AGE FACTORIES</div>
+      <div class="boot-sub">Building the digital layer</div>
+    </div>
+    <div class="boot-line"><span></span></div>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "New Age Factories LLC",
+    "description": "A digital product studio building mobile apps, websites, e-commerce and connected systems. Creators of Ojra, a ride-hailing platform for riders and drivers.",
+    "email": "hello@newagefactories.com",
+    "sameAs": [
+      "https://play.google.com/store/apps/details?id=com.ojra.rider",
+      "https://play.google.com/store/apps/details?id=com.ojra.driver"
+    ],
+    "knowsAbout": [
+      "Mobile app development",
+      "Website development",
+      "E-commerce",
+      "Digital solutions",
+      "Networking"
+    ]
+  }
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    (function () {
+      var boot = document.getElementById('boot');
+      function dismiss() {
+        if (!boot) return;
+        boot.classList.add('loaded');
+        setTimeout(function () { if (boot && boot.parentNode) boot.parentNode.removeChild(boot); }, 700);
+      }
+      window.addEventListener('flutter-first-frame', dismiss);
+      setTimeout(dismiss, 12000);
+    })();
+  </script>
+</body>
+</html>
